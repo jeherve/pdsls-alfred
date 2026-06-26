@@ -1,7 +1,7 @@
 {
   "name": "pdsls-alfred",
   "version": "1.0.0",
-  "description": "AT Protocol utilities for Alfred — an Alfred port of the PDSls Raycast extension (pdsls.dev).",
+  "description": "AT Protocol utilities for Alfred — search users, resolve identities, view PLC logs and lexicons via pds.ls.",
   "type": "module",
   "private": true,
   "scripts": {
