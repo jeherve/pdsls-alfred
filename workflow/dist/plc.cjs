@@ -2658,7 +2658,7 @@ async function main() {
       uid: entry.cid,
       title: date,
       subtitle: `${entry.nullified ? "[Nullified] " : ""}${diffSummary(diffs)}`,
-      open: `https://pdsls.dev/at://${did}#logs`,
+      open: `https://pds.ls/at://${did}#logs`,
       copyCmd: { value: JSON.stringify(entry, null, 2), label: "Copy operation JSON" },
       quicklook
     });

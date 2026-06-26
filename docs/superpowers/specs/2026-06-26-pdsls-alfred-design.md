@@ -1,7 +1,7 @@
 # PDSLS Alfred Workflow — Design
 
 Port of the [PDSls Raycast extension](https://github.com/raycast/extensions/tree/186d955eda64f9e956b25a3fdf5566b1d38f57f2/extensions/pdsls/)
-to an Alfred workflow, with full feature parity. Integrates with [pdsls.dev](https://pdsls.dev)
+to an Alfred workflow, with full feature parity. Integrates with [pds.ls](https://pds.ls)
 to inspect AT Protocol data.
 
 ## Goal
@@ -31,7 +31,7 @@ Provide the same four utilities the Raycast extension offers, as Alfred Script F
 ### Search Users (`pdsearch`)
 - Calls `https://public.api.bsky.app/xrpc/app.bsky.actor.searchActorsTypeahead?q=…&limit=10`.
 - Rows: avatar icon, `displayName` (title) / `@handle` (subtitle), one per actor.
-- Actions: ⏎ open `https://pdsls.dev/at://{did}`; ⌘ copy DID; ⌥ copy handle.
+- Actions: ⏎ open `https://pds.ls/at://{did}`; ⌘ copy DID; ⌥ copy handle.
 
 ### Resolve Identity (`pdresolve`)
 - DID input → resolve DID document (PLC + web composite resolver), extract handle.
@@ -53,7 +53,7 @@ Provide the same four utilities the Raycast extension offers, as Alfred Script F
 - Resolve NSID authority via `_lexicon` DNS, resolve schema, render markdown (ported from
   Raycast's renderer).
 - Rows: one per def (title `name (type)`, subtitle key/description) plus a top summary row.
-  Actions: ⏎ open `https://pdsls.dev/at://{authority}/com.atproto.lexicon.schema/{nsid}#schema`;
+  Actions: ⏎ open `https://pds.ls/at://{authority}/com.atproto.lexicon.schema/{nsid}#schema`;
   ⌘ copy schema JSON; ⌥ copy markdown; ⇧ Quick Look the full rendered markdown (as HTML).
 
 ## Architecture

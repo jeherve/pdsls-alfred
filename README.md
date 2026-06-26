@@ -1,7 +1,7 @@
 # PDSls for Alfred
 
 [AT Protocol](https://atproto.com) utilities for [Alfred](https://www.alfredapp.com/), integrating
-with [pdsls.dev](https://pdsls.dev) to inspect data on the network. An Alfred port of the
+with [pds.ls](https://pds.ls) to inspect data on the network. An Alfred port of the
 [PDSls Raycast extension](https://github.com/raycast/extensions/tree/main/extensions/pdsls), reusing
 the same `@atcute/*` resolution libraries for parity.
 
@@ -16,7 +16,7 @@ the same `@atcute/*` resolution libraries for parity.
 
 ### Actions on any result
 
-- **⏎** — open the relevant `pdsls.dev` page in your browser
+- **⏎** — open the relevant `pds.ls` page in your browser
 - **⌘** — copy the DID / operation JSON / schema JSON
 - **⌥** — copy the secondary value (handle / markdown), where available
 - **⇧** — Quick Look the rendered detail (DID document, PLC diff, or full lexicon)
@@ -60,4 +60,4 @@ non-actionable Alfred row rather than failing the script.
 ## Credits
 
 Ports the PDSls Raycast extension by its original authors. Built on the
-[`@atcute`](https://github.com/mary-ext/atcute) libraries. Powered by [pdsls.dev](https://pdsls.dev).
+[`@atcute`](https://github.com/mary-ext/atcute) libraries. Powered by [pds.ls](https://pds.ls).

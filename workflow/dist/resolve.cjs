@@ -1900,7 +1900,7 @@ async function resolveDid(did) {
       uid: did,
       title: handle ? `@${handle}` : did,
       subtitle: handle ? did : "DID document",
-      open: `https://pdsls.dev/at://${did}#identity`,
+      open: `https://pds.ls/at://${did}#identity`,
       copyCmd: { value: did, label: "Copy DID" },
       copyAlt: { value: docJson, label: "Copy DID document JSON" },
       quicklook
@@ -1952,7 +1952,7 @@ async function resolveHandle(handle) {
       uid: handle,
       title: `@${handle}`,
       subtitle: resolvedDid ? `Resolves to ${resolvedDid}` : "Could not resolve handle",
-      open: resolvedDid ? `https://pdsls.dev/at://${resolvedDid}` : void 0,
+      open: resolvedDid ? `https://pds.ls/at://${resolvedDid}` : void 0,
       copyCmd: resolvedDid ? { value: resolvedDid, label: "Copy DID" } : void 0
     }),
     buildItem({

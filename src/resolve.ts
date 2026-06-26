@@ -18,7 +18,7 @@ async function resolveDid(did: AtprotoDid): Promise<AlfredItem[]> {
       uid: did,
       title: handle ? `@${handle}` : did,
       subtitle: handle ? did : "DID document",
-      open: `https://pdsls.dev/at://${did}#identity`,
+      open: `https://pds.ls/at://${did}#identity`,
       copyCmd: { value: did, label: "Copy DID" },
       copyAlt: { value: docJson, label: "Copy DID document JSON" },
       quicklook,
@@ -87,7 +87,7 @@ async function resolveHandle(handle: string): Promise<AlfredItem[]> {
       uid: handle,
       title: `@${handle}`,
       subtitle: resolvedDid ? `Resolves to ${resolvedDid}` : "Could not resolve handle",
-      open: resolvedDid ? `https://pdsls.dev/at://${resolvedDid}` : undefined,
+      open: resolvedDid ? `https://pds.ls/at://${resolvedDid}` : undefined,
       copyCmd: resolvedDid ? { value: resolvedDid, label: "Copy DID" } : undefined,
     }),
     buildItem({

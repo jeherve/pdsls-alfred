@@ -1,4 +1,4 @@
-// Search Users — typeahead profile search, open in pdsls.dev.
+// Search Users — typeahead profile search, open in pds.ls.
 import { buildItem, infoItem, output } from "./lib/alfred.js";
 
 interface Actor {
@@ -36,7 +36,7 @@ async function main(): Promise<void> {
         uid: actor.did,
         title: actor.displayName || actor.handle,
         subtitle: actor.displayName ? `@${actor.handle}` : actor.did,
-        open: `https://pdsls.dev/at://${actor.did}`,
+        open: `https://pds.ls/at://${actor.did}`,
         copyCmd: { value: actor.did, label: "Copy DID" },
         copyAlt: { value: actor.handle, label: "Copy handle" },
       }),

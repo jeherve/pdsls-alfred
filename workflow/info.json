@@ -1,11 +1,11 @@
 {
   "bundleid": "com.jeherve.pdsls",
   "name": "PDSls",
-  "description": "AT Protocol utilities — search users, resolve identities, view PLC logs and lexicons via pdsls.dev",
+  "description": "AT Protocol utilities — search users, resolve identities, view PLC logs and lexicons via pds.ls",
   "createdby": "Jeremy Herve",
-  "webaddress": "https://pdsls.dev",
+  "webaddress": "https://pds.ls",
   "version": "1.0.0",
-  "readme": "AT Protocol utilities for Alfred, integrating with pdsls.dev.\n\nKeywords:\n  pdsearch {query}   Search Bluesky profiles\n  pdresolve {query}  Resolve a DID or handle\n  pdplc {query}      View the PLC operation log for a did:plc\n  pdlex {nsid}       View a lexicon schema (e.g. app.bsky.feed.post)\n\nActions on any result: ⏎ open in pdsls.dev · ⌘ copy DID/JSON · ⌥ copy secondary · ⇧ Quick Look detail.\n\nRequires Node.js on PATH (Homebrew /opt/homebrew/bin or nvm are auto-detected).",
+  "readme": "AT Protocol utilities for Alfred, integrating with pds.ls.\n\nKeywords:\n  pdsearch {query}   Search Bluesky profiles\n  pdresolve {query}  Resolve a DID or handle\n  pdplc {query}      View the PLC operation log for a did:plc\n  pdlex {nsid}       View a lexicon schema (e.g. app.bsky.feed.post)\n\nActions on any result: ⏎ open in pds.ls · ⌘ copy DID/JSON · ⌥ copy secondary · ⇧ Quick Look detail.\n\nRequires Node.js on PATH (Homebrew /opt/homebrew/bin or nvm are auto-detected).",
   "variables": {},
   "variablesdontexport": [],
   "connections": {

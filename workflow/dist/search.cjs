@@ -70,7 +70,7 @@ async function main() {
         uid: actor.did,
         title: actor.displayName || actor.handle,
         subtitle: actor.displayName ? `@${actor.handle}` : actor.did,
-        open: `https://pdsls.dev/at://${actor.did}`,
+        open: `https://pds.ls/at://${actor.did}`,
         copyCmd: { value: actor.did, label: "Copy DID" },
         copyAlt: { value: actor.handle, label: "Copy handle" }
       })

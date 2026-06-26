@@ -142,7 +142,7 @@
 	<key>createdby</key>
 	<string>Jeremy Herve</string>
 	<key>description</key>
-	<string>AT Protocol utilities — search users, resolve identities, view PLC logs and lexicons via pdsls.dev</string>
+	<string>AT Protocol utilities — search users, resolve identities, view PLC logs and lexicons via pds.ls</string>
 	<key>name</key>
 	<string>PDSls</string>
 	<key>objects</key>
@@ -347,7 +347,7 @@ esac</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>AT Protocol utilities for Alfred, integrating with pdsls.dev.
+	<string>AT Protocol utilities for Alfred, integrating with pds.ls.
 
 Keywords:
   pdsearch {query}   Search Bluesky profiles
@@ -355,7 +355,7 @@ Keywords:
   pdplc {query}      View the PLC operation log for a did:plc
   pdlex {nsid}       View a lexicon schema (e.g. app.bsky.feed.post)
 
-Actions on any result: ⏎ open in pdsls.dev · ⌘ copy DID/JSON · ⌥ copy secondary · ⇧ Quick Look detail.
+Actions on any result: ⏎ open in pds.ls · ⌘ copy DID/JSON · ⌥ copy secondary · ⇧ Quick Look detail.
 
 Requires Node.js on PATH (Homebrew /opt/homebrew/bin or nvm are auto-detected).</string>
 	<key>uidata</key>
@@ -403,6 +403,6 @@ Requires Node.js on PATH (Homebrew /opt/homebrew/bin or nvm are auto-detected).<
 	<key>version</key>
 	<string>1.0.0</string>
 	<key>webaddress</key>
-	<string>https://pdsls.dev</string>
+	<string>https://pds.ls</string>
 </dict>
 </plist>

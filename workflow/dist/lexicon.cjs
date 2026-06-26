@@ -4660,7 +4660,7 @@ async function main() {
   const markdown = renderSchema(schema);
   const json = JSON.stringify(schema, null, 2);
   const quicklook = writeQuickLook(`lexicon-${nsid2}`, markdown);
-  const pdslsUrl = `https://pdsls.dev/at://${authority}/com.atproto.lexicon.schema/${nsid2}#schema`;
+  const pdslsUrl = `https://pds.ls/at://${authority}/com.atproto.lexicon.schema/${nsid2}#schema`;
   const items = [
     buildItem({
       uid: nsid2,
