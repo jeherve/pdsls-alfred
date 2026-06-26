@@ -1,0 +1,143 @@
+{
+  "bundleid": "com.jeherve.pdsls",
+  "name": "PDSls",
+  "description": "AT Protocol utilities — search users, resolve identities, view PLC logs and lexicons via pdsls.dev",
+  "createdby": "Jeremy Herve",
+  "webaddress": "https://pdsls.dev",
+  "version": "1.0.0",
+  "readme": "AT Protocol utilities for Alfred, integrating with pdsls.dev.\n\nKeywords:\n  pdsearch {query}   Search Bluesky profiles\n  pdresolve {query}  Resolve a DID or handle\n  pdplc {query}      View the PLC operation log for a did:plc\n  pdlex {nsid}       View a lexicon schema (e.g. app.bsky.feed.post)\n\nActions on any result: ⏎ open in pdsls.dev · ⌘ copy DID/JSON · ⌥ copy secondary · ⇧ Quick Look detail.\n\nRequires Node.js on PATH (Homebrew /opt/homebrew/bin or nvm are auto-detected).",
+  "variables": {},
+  "variablesdontexport": [],
+  "connections": {
+    "SF_SEARCH": [
+      { "destinationuid": "DISPATCH", "modifiers": 0, "modifiersubtext": "", "vitoclose": false },
+      { "destinationuid": "DISPATCH", "modifiers": 1048576, "modifiersubtext": "", "vitoclose": false },
+      { "destinationuid": "DISPATCH", "modifiers": 524288, "modifiersubtext": "", "vitoclose": false }
+    ],
+    "SF_RESOLVE": [
+      { "destinationuid": "DISPATCH", "modifiers": 0, "modifiersubtext": "", "vitoclose": false },
+      { "destinationuid": "DISPATCH", "modifiers": 1048576, "modifiersubtext": "", "vitoclose": false },
+      { "destinationuid": "DISPATCH", "modifiers": 524288, "modifiersubtext": "", "vitoclose": false }
+    ],
+    "SF_PLC": [
+      { "destinationuid": "DISPATCH", "modifiers": 0, "modifiersubtext": "", "vitoclose": false },
+      { "destinationuid": "DISPATCH", "modifiers": 1048576, "modifiersubtext": "", "vitoclose": false },
+      { "destinationuid": "DISPATCH", "modifiers": 524288, "modifiersubtext": "", "vitoclose": false }
+    ],
+    "SF_LEX": [
+      { "destinationuid": "DISPATCH", "modifiers": 0, "modifiersubtext": "", "vitoclose": false },
+      { "destinationuid": "DISPATCH", "modifiers": 1048576, "modifiersubtext": "", "vitoclose": false },
+      { "destinationuid": "DISPATCH", "modifiers": 524288, "modifiersubtext": "", "vitoclose": false }
+    ]
+  },
+  "objects": [
+    {
+      "uid": "SF_SEARCH",
+      "type": "alfred.workflow.input.scriptfilter",
+      "version": 3,
+      "config": {
+        "alfredfiltersresults": false,
+        "argumenttype": 1,
+        "escaping": 102,
+        "keyword": "pdsearch",
+        "queuedelaycustom": 3,
+        "queuedelayimmediatelyinitially": true,
+        "queuedelaymode": 0,
+        "runningsubtext": "Searching profiles…",
+        "script": "export PATH=\"/opt/homebrew/bin:/usr/local/bin:$HOME/.nvm/current/bin:$PATH\"\ncommand -v node >/dev/null 2>&1 || export PATH=\"$(ls -d \"$HOME\"/.nvm/versions/node/*/bin 2>/dev/null | tail -1):$PATH\"\nexec node \"./dist/search.cjs\" \"$1\"",
+        "scriptargtype": 1,
+        "scriptfile": "",
+        "subtext": "Search Bluesky profiles and open in PDSls",
+        "title": "Search Users",
+        "type": 0,
+        "withspace": true
+      }
+    },
+    {
+      "uid": "SF_RESOLVE",
+      "type": "alfred.workflow.input.scriptfilter",
+      "version": 3,
+      "config": {
+        "alfredfiltersresults": false,
+        "argumenttype": 1,
+        "escaping": 102,
+        "keyword": "pdresolve",
+        "queuedelaycustom": 3,
+        "queuedelayimmediatelyinitially": true,
+        "queuedelaymode": 0,
+        "runningsubtext": "Resolving identity…",
+        "script": "export PATH=\"/opt/homebrew/bin:/usr/local/bin:$HOME/.nvm/current/bin:$PATH\"\ncommand -v node >/dev/null 2>&1 || export PATH=\"$(ls -d \"$HOME\"/.nvm/versions/node/*/bin 2>/dev/null | tail -1):$PATH\"\nexec node \"./dist/resolve.cjs\" \"$1\"",
+        "scriptargtype": 1,
+        "scriptfile": "",
+        "subtext": "Resolve a DID to a handle or vice versa",
+        "title": "Resolve Identity",
+        "type": 0,
+        "withspace": true
+      }
+    },
+    {
+      "uid": "SF_PLC",
+      "type": "alfred.workflow.input.scriptfilter",
+      "version": 3,
+      "config": {
+        "alfredfiltersresults": false,
+        "argumenttype": 1,
+        "escaping": 102,
+        "keyword": "pdplc",
+        "queuedelaycustom": 3,
+        "queuedelayimmediatelyinitially": true,
+        "queuedelaymode": 0,
+        "runningsubtext": "Fetching PLC log…",
+        "script": "export PATH=\"/opt/homebrew/bin:/usr/local/bin:$HOME/.nvm/current/bin:$PATH\"\ncommand -v node >/dev/null 2>&1 || export PATH=\"$(ls -d \"$HOME\"/.nvm/versions/node/*/bin 2>/dev/null | tail -1):$PATH\"\nexec node \"./dist/plc.cjs\" \"$1\"",
+        "scriptargtype": 1,
+        "scriptfile": "",
+        "subtext": "View the PLC operation log for a DID or handle",
+        "title": "PLC Operation Log",
+        "type": 0,
+        "withspace": true
+      }
+    },
+    {
+      "uid": "SF_LEX",
+      "type": "alfred.workflow.input.scriptfilter",
+      "version": 3,
+      "config": {
+        "alfredfiltersresults": false,
+        "argumenttype": 1,
+        "escaping": 102,
+        "keyword": "pdlex",
+        "queuedelaycustom": 3,
+        "queuedelayimmediatelyinitially": true,
+        "queuedelaymode": 0,
+        "runningsubtext": "Resolving lexicon…",
+        "script": "export PATH=\"/opt/homebrew/bin:/usr/local/bin:$HOME/.nvm/current/bin:$PATH\"\ncommand -v node >/dev/null 2>&1 || export PATH=\"$(ls -d \"$HOME\"/.nvm/versions/node/*/bin 2>/dev/null | tail -1):$PATH\"\nexec node \"./dist/lexicon.cjs\" \"$1\"",
+        "scriptargtype": 1,
+        "scriptfile": "",
+        "subtext": "View lexicon schema documentation (e.g. app.bsky.feed.post)",
+        "title": "View Lexicon",
+        "type": 0,
+        "withspace": true
+      }
+    },
+    {
+      "uid": "DISPATCH",
+      "type": "alfred.workflow.action.script",
+      "version": 2,
+      "config": {
+        "concurrently": false,
+        "escaping": 102,
+        "script": "case \"$pdsls_action\" in\n  open) open \"$pdsls_value\" ;;\n  copy) printf %s \"$pdsls_value\" | pbcopy ;;\nesac",
+        "scriptargtype": 1,
+        "scriptfile": "",
+        "type": 0
+      }
+    }
+  ],
+  "uidata": {
+    "SF_SEARCH": { "xpos": 60, "ypos": 40 },
+    "SF_RESOLVE": { "xpos": 60, "ypos": 170 },
+    "SF_PLC": { "xpos": 60, "ypos": 300 },
+    "SF_LEX": { "xpos": 60, "ypos": 430 },
+    "DISPATCH": { "xpos": 420, "ypos": 230 }
+  }
+}

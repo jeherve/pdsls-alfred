@@ -1,0 +1,28 @@
+{
+  "name": "pdsls-alfred",
+  "version": "1.0.0",
+  "description": "AT Protocol utilities for Alfred — an Alfred port of the PDSls Raycast extension (pdsls.dev).",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "esbuild test/*.test.ts --bundle --platform=node --format=cjs --outdir=test-dist --out-extension:.js=.cjs --log-level=error && node --test 'test-dist/*.cjs'",
+    "package": "node build.mjs && rm -f PDSLS.alfredworkflow && cd workflow && zip -r -X ../PDSLS.alfredworkflow . -x '.*' 'info.json' && cd ..",
+    "all": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@atcute/did-plc": "^0.3.1",
+    "@atcute/identity": "^1.1.3",
+    "@atcute/identity-resolver": "^1.2.2",
+    "@atcute/identity-resolver-node": "^1.0.3",
+    "@atcute/lexicon-resolver": "^0.1.6",
+    "@atcute/lexicon-resolver-node": "^0.1.0",
+    "@atcute/lexicons": "^1.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0"
+  }
+}
